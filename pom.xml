@@ -28,7 +28,7 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>maven2</id>
+            <id>maven1</id>
             <name>Maven.org</name>
             <url>https://repo1.maven.org/maven2</url>
         </pluginRepository>
@@ -69,6 +69,10 @@
                     <sonar.host.url>http://100.25.223.72:9000</sonar.host.url>
                     <sonar.projectKey>Netflix</sonar.projectKey>
                     <sonar.login>e6dc695d91d144fbc1de1a3ad24c86009cef1131</sonar.login>
+                    <!-- Add the errors -->
+                    <sonar.java.source>1.7</sonar.java.source>
+                    <sonar.java.target>1.7</sonar.java.target>
+                    <!-- End of errors -->
                 </configuration>
             </plugin>
         </plugins>
