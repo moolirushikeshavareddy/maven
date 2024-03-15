@@ -1,6 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>in.RUSHI</groupId>
     <artifactId>NETFLIX</artifactId>
     <packaging>war</packaging>
@@ -24,13 +28,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        
-        <!-- Added dependency for SecDispatcher -->
+
         <dependency>
             <groupId>org.sonatype.plexus</groupId>
             <artifactId>plexus-sec-dispatcher</artifactId>
-            <version>1.4</version> <!-- Adjust version if needed -->
-        </dependency>
+            <version>1.4</version> </dependency>
     </dependencies>
 
     <pluginRepositories>
@@ -52,15 +54,12 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-            <!-- Update the maven-war-plugin version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <!-- Update to the latest version -->
                 <version>3.2.3</version>
             </plugin>
-            
-            <!-- SonarQube plugin configuration -->
+
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
