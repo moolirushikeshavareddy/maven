@@ -10,7 +10,6 @@
 
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
-        <sonar.plugin.version>3.11.0.3922</sonar.plugin.version>
     </properties>
 
     <dependencies>
@@ -22,14 +21,21 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven1</id>
+            <name>Maven.org</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -39,26 +45,14 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-            <!-- Maven War Plugin -->
+            <!-- Update the maven-war-plugin version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <!-- Update to the latest version -->
                 <version>3.2.3</version>
-            </plugin>
-            <!-- SonarQube Plugin -->
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>${sonar.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>maven1</id>
-            <name>Maven.org</name>
-            <url>http://repo1.maven.org/maven2</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
+
