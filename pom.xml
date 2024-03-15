@@ -31,15 +31,6 @@
             <id>maven2</id>
             <name>Maven.org</name>
             <url>https://repo1.maven.org/maven2</url>
-             <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
-            
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>taglist-maven-plugin</artifactId>
-            </plugin>
         </pluginRepository>
     </pluginRepositories>
 
@@ -60,6 +51,25 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <!-- Update to the latest version -->
                 <version>3.2.3</version>
+            </plugin>
+            <!-- Add SonarQube plugin configuration -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sonar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sonar.host.url>http://100.25.223.72:9000</sonar.host.url>
+                    <sonar.projectKey>Netflix</sonar.projectKey>
+                    <sonar.login>e6dc695d91d144fbc1de1a3ad24c86009cef1131</sonar.login>
+                </configuration>
             </plugin>
         </plugins>
     </build>
