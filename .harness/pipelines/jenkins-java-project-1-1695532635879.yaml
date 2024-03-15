@@ -1,6 +1,6 @@
 pipeline:
-  identifier: Build_jenkins_java_project_1_1695532644556
-  name: Build jenkins-java-project-1
+  identifier: Maven_java_project
+  name: Build Maven_java_project
   orgIdentifier: default
   projectIdentifier: default_project
   properties:
@@ -8,7 +8,7 @@ pipeline:
       codebase:
         build: <+input>
         connectorRef: account.Github
-        repoName: RAHAMSHAIK007/jenkins-java-project-1
+        repoName: moolirushikeshavareddy/maven-java-project
   stages:
     - stage:
         identifier: build
