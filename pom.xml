@@ -7,11 +7,9 @@
     <version>1.2.2</version>
     <name>Java Home myweb</name>
     <url>https://maven.apache.org</url>
-
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.oracle.bedrock</groupId>
@@ -25,7 +23,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <pluginRepositories>
         <pluginRepository>
             <id>maven1</id>
@@ -33,7 +30,6 @@
             <url>https://repo1.maven.org/maven2</url>
         </pluginRepository>
     </pluginRepositories>
-
     <build>
         <plugins>
             <plugin>
@@ -54,19 +50,27 @@
             </plugin>
             <!-- Add SonarQube plugin configuration -->
             <plugin>
-                <pluginGroups>
-                    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-                </pluginGroups>
-                
-                <profiles>
-                    <profile>
-                        <id>sonar</id>
-                    <activation>
-                        <activeByDefault>true</activeByDefault>
-                    </activation>
-                    </profile>
-                </profiles>
-         
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sonar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sonar.host.url>http://100.25.223.72:9000</sonar.host.url>
+                    <sonar.projectKey>Netflix</sonar.projectKey>
+                    <sonar.login>e6dc695d91d144fbc1de1a3ad24c86009cef1131</sonar.login>
+                    <!-- Add the errors -->
+                    <sonar.java.source>1.7</sonar.java.source>
+                    <sonar.java.target>1.7</sonar.java.target>
+                    <!-- End of errors -->
+                </configuration>
+
             </plugin>
         </plugins>
     </build>
