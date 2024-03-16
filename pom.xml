@@ -54,18 +54,19 @@
             </plugin>
             <!-- Add SonarQube plugin configuration -->
             <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.11.0.3922</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sonar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <pluginGroups>
+                    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+                </pluginGroups>
                 
+                <profiles>
+                    <profile>
+                        <id>sonar</id>
+                    <activation>
+                        <activeByDefault>true</activeByDefault>
+                    </activation>
+                    </profile>
+                </profiles>
+         
             </plugin>
         </plugins>
     </build>
